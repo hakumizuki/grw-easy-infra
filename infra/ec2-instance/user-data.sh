@@ -14,9 +14,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo yum update -y
 sudo yum install git -y
 
-sudo git clone https://github.com/weseek/growi-docker-compose.git growi
+sudo git clone https://github.com/hakumizuki/grw-light-docker-compose.git growi
 cd growi
 docker-compose up
 
-Add amazon-linux2 defualt user to docker group
+# Add amazon-linux2 defualt user to docker group
 sudo usermod -aG docker ec2-user
