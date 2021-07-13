@@ -1,3 +1,3 @@
-output "growi_public_dns" {
-  value = aws_instance.growi.public_dns
+output "growi_url" {
+  value = "http://${aws_eip.growi.public_ip}:3000"
 }

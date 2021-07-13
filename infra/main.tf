@@ -1,10 +1,10 @@
 terraform {
   backend "s3" {
-    bucket         = "growi-easy-tfstate"
+    bucket         = var.s3_bucket_name
     key            = "growi-easy.tfstate"
     region         = "ap-northeast-1"
     encrypt        = true
-    dynamodb_table = "growi-easy-tfstate-lock"
+    dynamodb_table = var.dynamodb_table_name
   }
 
   required_providers {
@@ -27,7 +27,7 @@ locals {
     MannagedBy  = "Terraform"
   }
   # Network part for VPC cidr block (set this to avoid conflicts)
-  vpc_cidr_network = "20.20"
+  vpc_cidr_network = var.vpc_cidr_network
 }
 
 # Retrieve current region to avoid hard coding
