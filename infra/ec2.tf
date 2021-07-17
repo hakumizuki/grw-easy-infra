@@ -25,8 +25,8 @@ resource "aws_instance" "growi" {
   user_data            = file("./ec2-instance/user-data.sh")
   iam_instance_profile = aws_iam_instance_profile.growi.name
   # key_name             = var.access_key_name
-  subnet_id            = aws_subnet.public.id
-  private_ip           = "${local.vpc_cidr_network}.1.10"
+  subnet_id  = aws_subnet.public.id
+  private_ip = "${local.vpc_cidr_network}.1.10"
 
   vpc_security_group_ids = [
     aws_security_group.growi.id

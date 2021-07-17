@@ -1,10 +1,10 @@
 terraform {
   backend "s3" {
-    bucket         = var.s3_bucket_name
+    bucket         = "ここは必ず指定"
     key            = "growi-easy.tfstate"
     region         = "ap-northeast-1"
     encrypt        = true
-    dynamodb_table = var.dynamodb_table_name
+    dynamodb_table = "ここは必ず指定"
   }
 
   required_providers {
